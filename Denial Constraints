@@ -1,0 +1,1471 @@
+// Implemented our own Data Cleaning Algorithm in Java 
+
+
+import java.sql.*;
+
+import java.util.*;
+
+import java.lang.reflect.*;
+
+class cleanCustomer
+{
+	 
+	 private int MTID;
+	 private String MFN;
+	 private String MLN;
+	 private String MGD;
+	 private int MAC;
+	 private int MPH;
+	 private String MCT;
+	 private String MST;
+	 private int MZIP;
+	 private String MMS;
+	 private String MCH;
+	 private int MSAL;
+	 private int MTR;
+	 private int MSTX;
+	 private int MMTX;
+	 private int MCTX;
+	 
+	 public void setMTID(int MTID)
+	 {
+		 
+		 this.MTID = MTID;
+		 
+	 }
+	 
+	 public void setMFN(String MFN)
+	 {
+		 
+		 this.MFN = MFN;
+		 
+	 }
+	 
+	 public void setMLN(String MLN)
+	 {
+		 
+		 this.MLN = MLN;
+		 
+	 }
+	 
+	 public void setMGD(String MGD)
+	 {
+		 
+		 this.MGD = MGD;
+		 
+	 }
+	 
+	 public void setMAC(int MAC)
+	 {
+		 
+		 this.MAC = MAC;
+		 
+	 }
+	 public void setMPH(int MPH)
+	 {
+		 
+		 this.MPH = MPH;
+		 
+	 }
+	 public void setMCT(String MCT)
+	 {
+		 
+		 this.MCT = MCT;
+		 
+	 }
+	 
+	 public void setMST(String MST)
+	 {
+		 
+		 this.MST = MST;
+		 
+	 }
+	 
+	 public void setMZIP(int MZIP)
+	 {
+		 
+		 this.MZIP = MZIP;
+		 
+	 }
+	 
+	 public void setMMS(String MS)
+	 {
+		 
+		 this.MMS = MS;
+		 
+	 }
+	 
+	 public void setMCH(String MCH)
+	 {
+		 
+		 this.MCH = MCH;
+		 
+	 } 
+	 
+	 public void setMSAL(int MSAL)
+	 {
+		 
+		 this.MSAL = MSAL;
+		 
+	 }
+	 
+	 public void setMTR(int MTR)
+	 {
+		 
+		 this.MTR = MTR;
+		 
+	 }
+	 public void setMSTX(int MSTX)
+	 {
+		 
+		 this.MSTX = MSTX;
+		 
+	 }
+	 
+	 public void setMMTX(int MMTX)
+	 {
+		 
+		 this.MMTX = MMTX;
+		 
+	 }
+	 
+	 public void setMCTX(int MCTX)
+	 {
+		 
+		 this.MCTX = MCTX;
+		 
+	 }
+	 
+	 public int getMTID()
+	 {
+		 
+		 return MTID;
+		 
+	 }
+	 
+	 public String getMFN()
+	 {
+		 
+		 return MFN;
+		 
+	 }
+	 
+	 public String getMLN()
+	 {
+		 
+		 return MLN;
+		 
+	 }
+	 
+	 public String getMGD()
+	 {
+		 
+		return MGD;
+		 
+	 }
+	 
+	 public int getMAC()
+	 {
+		 
+		return MAC;
+		 
+	 }
+	 public int getMPH()
+	 {
+		 
+		 return MPH;
+		 
+	 }
+	 public String getMCT()
+	 {
+		 
+		return MCT;
+		 
+	 }
+	 
+	 public String getMST()
+	 {
+		 
+		 return MST;
+		 
+	 }
+	 
+	 public int getMZIP()
+	 {
+		 
+		 return MZIP;
+		 
+	 }
+	 
+	 public String getMMS()
+	 {
+		 
+		return MMS;
+		 
+	 }
+	 
+	 public String getMCH()
+	 {
+		 
+		 return MCH;
+		 
+	 } 
+	 
+	 public int getMSAL()
+	 {
+		 
+		 return MSAL;
+		 
+	 }
+	 
+	 public int getMTR()
+	 {
+		 
+		return MTR;
+		 
+	 }
+	 public int getMSTX()
+	 {
+		 
+		 return MSTX;
+		 
+	 }
+	 
+	 public int getMMTX()
+	 {
+		 
+		 return MMTX;
+		 
+	 }
+	 
+	 public int getMCTX()
+	 {
+		 
+		return MCTX;
+		 
+	 }
+	 
+
+}
+
+
+
+class Rules
+{
+	
+	private int RID;
+	private String TEVD;
+	private String TNEG;
+	private String TPOS;
+	private String MEVD;
+	private String MNEG;
+	private String MPOS;
+	
+	public void setRID(int RID)
+	{
+		
+		this.RID = RID;
+		
+	}
+	
+	
+	public void setTEVD(String TEVD)
+	 {
+		 
+		 this.TEVD = TEVD;
+		 
+	 }
+	public void setTNEG(String TNEG)
+	 {
+		 
+		 this.TNEG = TNEG;
+		 
+	 }
+	public void setTPOS(String TPOS)
+	 {
+		 
+		 this.TPOS = TPOS;
+		 
+	 }
+	public void setMEVD(String MEVD)
+	 {
+		 
+		 this.MEVD = MEVD;
+		 
+	 }
+	public void setMNEG(String MNEG)
+	 {
+		 
+		 this.MNEG = MNEG;
+		 
+	 }
+	public void setMPOS(String MPOS)
+	 {
+		 
+		 this.MPOS = MPOS;
+		 
+	 }
+	
+	
+	public int getRID()
+	{
+		
+		return RID;
+		
+		
+	}
+	
+	public String getTEVD()
+	{
+		
+		return TEVD;
+		
+	}
+	
+	public String getTNEG()
+	{
+		
+		return TNEG;
+		
+	}
+	
+	public String getTPOS()
+	{
+		
+		return TPOS;
+		
+	}
+	public String getMEVD()
+	{
+		
+		return MEVD;
+		
+	}
+	public String getMNEG()
+	{
+		
+		return MNEG;
+		
+	}
+	public String getMPOS()
+	{
+		
+		return MPOS;
+		
+	}
+	
+	
+	
+
+}
+
+
+
+
+ class Customer
+ {
+	 
+	 private int TID;
+	 private String FN;
+	 private String LN;
+	 private String GD;
+	 private int AC;
+	 private int PH;
+	 private String CT;
+	 private String ST;
+	 private int ZIP;
+	 private String MS;
+	 private String CH;
+	 private int SAL;
+	 private int TR;
+	 private int STX;
+	 private int MTX;
+	 private int CTX;
+	 private String AttributeName;
+	 private String NegativeAttributes;
+	 boolean FNTrue;
+	 
+	 public void setTID(int TID)
+	 {
+		 
+		 this.TID = TID;
+		 
+	 }
+	 
+	 public void setFN(String FN)
+	 {
+		 
+		 this.FN = FN;
+		 
+	 }
+	 
+	 public void setLN(String LN)
+	 {
+		 
+		 this.LN = LN;
+		 
+	 }
+	 
+	 public void setGD(String GD)
+	 {
+		 
+		 this.GD = GD;
+		 
+	 }
+	 
+	 public void setAC(int AC)
+	 {
+		 
+		 this.AC = AC;
+		 
+	 }
+	 public void setPH(int PH)
+	 {
+		 
+		 this.PH = PH;
+		 
+	 }
+	 public void setCT(String CT)
+	 {
+		 
+		 this.CT = CT;
+		 
+	 }
+	 
+	 public void setST(String ST)
+	 {
+		 
+		 this.ST = ST;
+		 
+	 }
+	 
+	 public void setZIP(int ZIP)
+	 {
+		 
+		 this.ZIP = ZIP;
+		 
+	 }
+	 
+	 public void setMS(String MS)
+	 {
+		 
+		 this.MS = MS;
+		 
+	 }
+	 
+	 public void setCH(String CH)
+	 {
+		 
+		 this.CH = CH;
+		 
+	 } 
+	 
+	 public void setSAL(int SAL)
+	 {
+		 
+		 this.SAL = SAL;
+		 
+	 }
+	 
+	 public void setTR(int TR)
+	 {
+		 
+		 this.TR = TR;
+		 
+	 }
+	 public void setSTX(int STX)
+	 {
+		 
+		 this.STX = STX;
+		 
+	 }
+	 
+	 public void setMTX(int MTX)
+	 {
+		 
+		 this.MTX = MTX;
+		 
+	 }
+	 
+	 public void setCTX(int CTX)
+	 {
+		 
+		 this.CTX = CTX;
+		 
+	 }
+	 
+	 public int getTID()
+	 {
+		 
+		 return TID;
+		 
+	 }
+	 
+	 public String getFN()
+	 {
+		 
+		 return FN;
+		 
+	 }
+	 
+	 public String getLN()
+	 {
+		 
+		 return LN;
+		 
+	 }
+	 
+	 public String getGD()
+	 {
+		 
+		return GD;
+		 
+	 }
+	 
+	 public int getAC()
+	 {
+		 
+		return AC;
+		 
+	 }
+	 public int getPH()
+	 {
+		 
+		 return PH;
+		 
+	 }
+	 public String getCT()
+	 {
+		 
+		return CT;
+		 
+	 }
+	 
+	 public String getST()
+	 {
+		 
+		 return ST;
+		 
+	 }
+	 
+	 public int getZIP()
+	 {
+		 
+		 return ZIP;
+		 
+	 }
+	 
+	 public String getMS()
+	 {
+		 
+		return MS;
+		 
+	 }
+	 
+	 public String getCH()
+	 {
+		 
+		 return CH;
+		 
+	 } 
+	 
+	 public int getSAL()
+	 {
+		 
+		 return SAL;
+		 
+	 }
+	 
+	 public int getTR()
+	 {
+		 
+		return TR;
+		 
+	 }
+	 public int getSTX()
+	 {
+		 
+		 return STX;
+		 
+	 }
+	 
+	 public int getMTX()
+	 {
+		 
+		 return MTX;
+		 
+	 }
+	 
+	 public int getCTX()
+	 {
+		 
+		return CTX;
+		 
+	 }
+	 
+	 public void setPositiveAttributes(String AttributeName) 
+	 {
+		 if(this.AttributeName == null)
+		 {
+			 
+			 this.AttributeName = AttributeName; 
+			 
+		 }
+		 else
+		 {
+		this.AttributeName = this.AttributeName + "," +AttributeName; 
+		 }
+		 
+	 }
+	 
+	 public String getPositiveAttributes()
+	 {
+		 
+		 return AttributeName;
+		 
+	 }
+	 
+	 public void setNegativeAttributes(String NegativeAttributes)
+	 {
+		 
+		 if(this.NegativeAttributes == null)
+		 {
+			 
+			 this.NegativeAttributes = NegativeAttributes; 
+			 
+		 }
+		 else
+		 {
+			 
+			 this.NegativeAttributes = this.NegativeAttributes + "," +NegativeAttributes; 
+		
+		 }
+ 
+	 }
+	 
+	 public String getNegativeAttrivutes()
+	 {
+		 
+		 return NegativeAttributes;
+		 
+	 }
+	 
+	 public void setFNTrue(boolean Condition)
+	 {
+		 
+		 FNTrue = Condition;
+		 
+		 
+	 }
+	 
+	 public boolean getFNTrue()
+	 {
+		 
+		 return FNTrue;
+		 
+		 
+	 }
+	 
+
+ }
+ 
+ class masterRule
+ {
+	 
+ String sqlquery2;
+	 
+
+	 Connection conn1;
+	 Statement stmt1;
+	 
+	 static final String DB_URL = "jdbc:mysql://localhost:3306/TEST1";
+	 
+	 List<cleanCustomer> clean = new ArrayList<cleanCustomer>();
+	 
+	 masterRule(String sqlquery2) throws Exception
+	 {
+		 
+		 this.sqlquery2 = sqlquery2;
+		 
+		//STEP 2: Register JDBC driver
+         Class.forName("com.mysql.jdbc.Driver");
+
+         //STEP 3: Open a connection
+         conn1 = DriverManager.getConnection(DB_URL,"root","");
+
+         //STEP 4: Execute a query
+         stmt1 = conn1.createStatement();
+		 
+	 }
+	 
+	 public List<cleanCustomer> fetchrule() throws Exception
+	 {
+		 
+		 ResultSet rs = stmt1.executeQuery(sqlquery2);
+		 
+		 
+		 while(rs.next())
+		 {
+			 
+			 cleanCustomer CC1 =  new cleanCustomer();
+			 CC1.setMTID(rs.getInt(1));
+			 CC1.setMFN(rs.getString(2));
+			 CC1.setMLN(rs.getString(3));
+			 CC1.setMGD(rs.getString(4));
+			 CC1.setMAC(rs.getInt(5));
+			 CC1.setMPH(rs.getInt(6));
+			 CC1.setMCT(rs.getString(7));
+			 CC1.setMST(rs.getString(8));
+			 CC1.setMZIP(rs.getInt(9));
+			 CC1.setMMS(rs.getString(10));
+			 CC1.setMCH(rs.getString(11));
+			 CC1.setMSAL(rs.getInt(12));
+			 CC1.setMTR(rs.getInt(13));
+			 CC1.setMSTX(rs.getInt(14));
+			 CC1.setMMTX(rs.getInt(15));
+			 CC1.setMCTX(rs.getInt(16));
+			 
+			 
+			 clean.add(CC1);
+			 
+		 }
+		 
+		 return clean;
+	 
+	 }
+ 	
+ 
+ public void printcleanMaster()
+ {
+	 int count= clean.size();
+	 
+	 count=count-1;
+	 
+	 while(count>=0)
+	 {
+		 
+		 System.out.println("MTID = "+clean.get(count).getMTID()+" |MFN = "+clean.get(count).getMFN()+" |MLN = "+clean.get(count).getMLN()+" |MGD = "+clean.get(count).getMGD()+" |MAC = "+clean.get(count).getMAC()+" |MPH = "+clean.get(count).getMPH()+" |MCT = "+clean.get(count).getMCT()+" |MST = "+clean.get(count).getMST()+" |MZIP = "+clean.get(count).getMZIP()+" |MMS = "+clean.get(count).getMMS()+" |MCH = "+clean.get(count).getMCH()+" |MSAL = "+clean.get(count).getMSAL()+" |MMTR = "+clean.get(count).getMTR()+" |MSTX = "+clean.get(count).getMSTX()+" |MMTX = "+clean.get(count).getMMTX()+" |MCTX = "+clean.get(count).getMCTX());
+		 count--; 
+	 }
+	 
+	 
+ }
+	 
+	 
+	 
+ }
+ 
+ 
+ class computeRule
+ {
+	 
+	 String sqlquery2;
+	 
+
+	 Connection conn1;
+	 Statement stmt1;
+	 
+	 static final String DB_URL = "jdbc:mysql://localhost:3306/TEST1";
+	 
+	 List<Rules> Rules = new ArrayList<Rules>();
+	 
+	 computeRule(String sqlquery2) throws Exception
+	 {
+		 
+		 this.sqlquery2 = sqlquery2;
+		 
+		//STEP 2: Register JDBC driver
+         Class.forName("com.mysql.jdbc.Driver");
+
+         //STEP 3: Open a connection
+         conn1 = DriverManager.getConnection(DB_URL,"root","");
+
+         //STEP 4: Execute a query
+         stmt1 = conn1.createStatement();
+		 
+	 }
+	 
+	 public List<Rules> fetchrule() throws Exception
+	 {
+		 
+		 ResultSet rs = stmt1.executeQuery(sqlquery2);
+		 
+		 
+		 while(rs.next())
+		 {
+			 
+			 Rules rule =  new Rules();
+			 rule.setRID(rs.getInt(1));
+			 rule.setTEVD(rs.getString(2));
+			 rule.setTNEG(rs.getString(3));
+			 rule.setTPOS(rs.getString(4));
+			 rule.setMEVD(rs.getString(5));
+			 rule.setMNEG(rs.getString(6));
+			 rule.setMPOS(rs.getString(7));
+			 
+			 
+			 Rules.add(rule);
+			 
+		 }
+		 
+		 return Rules;
+	 
+	 }
+ 	
+ 
+ public void printRule()
+ {
+	 int count= Rules.size();
+	 
+	 count=count-1;
+	 
+	 while(count>=0)
+	 {
+		 
+		 System.out.println("RID = "+Rules.get(count).getRID()+" |TEVD = "+Rules.get(count).getTEVD()+" |TNEG = "+Rules.get(count).getTNEG()+" |TPOS = "+Rules.get(count).getTPOS()+" |MEVD = "+Rules.get(count).getMEVD()+" |MNEG = "+Rules.get(count).getMNEG()+" |MPOS = "+Rules.get(count).getMPOS());
+		 count--; 
+	 }
+	 
+	 
+ }
+ 
+ }
+ 
+ 
+ class computeData
+ {
+	 
+	 String sqlquery;
+	 
+	 Connection conn;
+	 Statement stmt;
+	 
+	 static final String DB_URL = "jdbc:mysql://localhost:3306/TEST1";
+	 
+	 List<Customer> customers = new ArrayList<Customer>();
+	
+	 computeData( String sqlquery) throws Exception
+	 {
+		 
+		 this.sqlquery = sqlquery;
+		 
+		 
+		//STEP 2: Register JDBC driver
+         Class.forName("com.mysql.jdbc.Driver");
+
+         //STEP 3: Open a connection
+         conn = DriverManager.getConnection(DB_URL,"root","");
+
+         //STEP 4: Execute a query
+         stmt = conn.createStatement();
+		 
+		 
+	 }
+	 
+	 public List<Customer> fetchData() throws Exception
+	 {
+		 ResultSet rs = stmt.executeQuery(sqlquery);
+		 
+		 int rows=0;
+		 
+		 while(rs.next())
+		 {
+			 
+			 rows= rows+1;
+			 
+		 }
+		 
+		 System.out.println("Number of Violations are: "+rows);
+		 
+		 rs.beforeFirst();
+		
+		 
+		 while(rs.next())
+		 {
+			 
+			 Customer customer =  new Customer();
+			 customer.setTID(rs.getInt(1));
+			 customer.setFN(rs.getString(2));
+			 customer.setLN(rs.getString(3));
+			 customer.setGD(rs.getString(4));
+			 customer.setAC(rs.getInt(5));
+			 customer.setPH(rs.getInt(6));
+			 customer.setCT(rs.getString(7));
+			 customer.setST(rs.getString(8));
+			 customer.setZIP(rs.getInt(9));
+			 customer.setMS(rs.getString(10));
+			 customer.setCH(rs.getString(11));
+			 customer.setSAL(rs.getInt(12));
+			 customer.setTR(rs.getInt(13));
+			 customer.setSTX(rs.getInt(14));
+			 customer.setMTX(rs.getInt(15));
+			 customer.setCTX(rs.getInt(16));
+			 
+			 customers.add(customer);
+			 
+		 }
+		 
+		 return customers;
+	 }
+	 
+	
+	 public void printData()
+	 {
+		 int count= customers.size();
+		 
+		 count=count-1;
+		 
+		 while(count>=0)
+		 {
+			 
+			 System.out.println("TID = "+customers.get(count).getTID()+" |FN = "+customers.get(count).getFN()+" |LN = "+customers.get(count).getLN()+" |GD = "+customers.get(count).getGD()+" |AC = "+customers.get(count).getAC()+" |PH = "+customers.get(count).getPH()+" |CT = "+customers.get(count).getCT()+" |ST = "+customers.get(count).getST()+" |ZIP = "+customers.get(count).getZIP()+" |MS = "+customers.get(count).getMS()+" |CH = "+customers.get(count).getCH()+" |SAL = "+customers.get(count).getSAL()+" |TR = "+customers.get(count).getTR()+" |STX = "+customers.get(count).getSTX()+" |MTX = "+customers.get(count).getMTX()+" |CTX = "+customers.get(count).getCTX());
+			 count--; 
+		 }
+		 
+		 
+	 }
+	 
+	 
+ }
+ 
+ 
+ class clean
+ {
+	 
+	 List<Customer> Customers = new ArrayList<Customer>();
+	 List<Rules> Rules = new ArrayList<Rules>();
+	 List<cleanCustomer> CleanCustomers = new ArrayList<cleanCustomer>();
+	 int RulesIteration,CustomerIteration,CleanCustomerIteration;
+	  
+	  String TEvidence,TNegative,TPositive,MEvidence,MNegative,MPositive;
+	  String POS,NEG,FREE;
+	  int i1=0,i2=0,i3=0,RID,SecondTupledataInteger,SecondMasterdataInteger;
+	  String PosAttributes,FixAttributes,PosAttributes1;
+	  
+	  String SecondTupledataString,SecondMasterdataString;
+	  
+	//  Properties CHANGE = new Properties();
+	//  Set S1;
+	  
+	  
+	 
+	 
+	 
+	 clean(List<Customer>Customers,List<Rules>Rules,List<cleanCustomer>CleanCustomers, String FixAttribute)
+	 {
+		 
+		 this.Customers = Customers;
+		 this.Rules =  Rules;
+		 this.CleanCustomers = CleanCustomers;
+		 this.FixAttributes = FixAttribute;
+		 
+		 RulesIteration = Rules.size();
+		 CustomerIteration = Customers.size();
+		 CleanCustomerIteration = CleanCustomers.size();
+		 
+		 
+	 	 
+	 }
+	 
+	 private static Set<String> attributeSet(String input) 
+	 
+	 {
+		    String[] attributes = input.split(",");
+		    return new HashSet<String>(Arrays.asList(attributes));
+	 }
+	 
+	
+	 
+	 public void cleanData()
+	 {
+		
+		 
+		 Customer C1 = new Customer();
+		 Rules R1 = new Rules();
+		 cleanCustomer CC1 = new cleanCustomer();
+		
+		 
+		// boolean Part1=false,Part2=false;
+		 
+		 C1 = getOneCustomer(Customers);
+		 
+		
+		 
+		 while((C1 != null))
+		 {
+			 	 C1.setPositiveAttributes("");
+				 CC1 = getOnecleanCustomer(CleanCustomers,C1);
+				 
+				 C1.setFNTrue(false);
+				 PosAttributes="";
+				 
+				 
+		 
+		 
+		 while(!attributeSet(PosAttributes).equals(attributeSet(FixAttributes)))
+		 {
+			 
+			 
+			 	R1 = getOneRule(Rules);
+			 	if(R1 != null)
+			 	{
+			 		try
+			 		{
+			 			
+			 			
+						 		TEvidence=R1.getTEVD();
+							 	TNegative=R1.getTNEG();
+							 	TPositive=R1.getTPOS();
+							 	MEvidence=R1.getMEVD();
+							 	MNegative=R1.getMNEG();
+							 	MPositive=R1.getMPOS();
+							 	RID=R1.getRID();
+							 	
+							 	PosAttributes1 = C1.getPositiveAttributes();
+							 	
+							 	if(!PosAttributes1.contains(TEvidence) && FixAttributes.contains(TPositive) && FixAttributes.contains(TEvidence))
+							 	{
+							 		
+							 		String FirstTupleMethodName = "get"+TEvidence;
+								 	
+								 	String FirstMasterMethodName = "get"+MEvidence;
+								 	
+								 	Method m1 = C1.getClass().getMethod(FirstTupleMethodName);
+								 	
+								 	String FirstTupledata = m1.invoke(C1).toString();
+								 	
+								 	Method m2 = CC1.getClass().getMethod(FirstMasterMethodName);
+						 			
+						 			String FirstCleanData = m2.invoke(CC1).toString();
+						 			
+						 			if(FirstTupledata.equals(FirstCleanData))
+						 			{
+						 				C1.setFNTrue(true);
+						 				if(PosAttributes.equals(""))
+						 				{
+						 					PosAttributes = TEvidence;
+						 					C1.setPositiveAttributes(TEvidence);
+						 				}
+
+						 			}
+
+							 		
+							 	}
+							 	
+							 	PosAttributes1 = C1.getPositiveAttributes();
+							 	
+							 	
+							 	if(PosAttributes1.contains(TEvidence) && FixAttributes.contains(TPositive) && FixAttributes.contains(TEvidence))
+							 	{
+							 		
+							 		String SecondTupleMethodName = "get"+TPositive;
+									String SecondMasterMethodName = "get"+MPositive;
+									
+									Method m3 = C1.getClass().getMethod(SecondTupleMethodName);
+									
+									if(m3.getReturnType().equals(Integer.TYPE))
+		 							{
+		 								
+		 								 SecondTupledataInteger = (Integer) m3.invoke(C1);
+		 								
+		 							}
+		 							
+		 							else
+		 							{
+		 									
+		 							
+		 							 SecondTupledataString = m3.invoke(C1).toString();
+		 							
+		 							}
+		 							
+		 							Method m4 = CC1.getClass().getMethod(SecondMasterMethodName);
+		 							
+		 							
+		 							if(m4.getReturnType().equals(Integer.TYPE))
+		 							{
+		 								
+		 								 SecondMasterdataInteger = (Integer) m4.invoke(CC1);
+		 								
+		 							}
+		 							
+		 							else
+		 							{
+		 									
+		 							
+		 							 SecondMasterdataString = m4.invoke(CC1).toString();
+		 							
+		 							}
+		 							
+		 							if( m3.getReturnType().equals(Integer.TYPE) && SecondTupledataInteger==SecondMasterdataInteger || !m3.getReturnType().equals(Integer.TYPE) && SecondTupledataString.equals(SecondMasterdataString) )
+		 							{
+		 								
+		 								//	Part2 = true;
+		 									PosAttributes = PosAttributes+","+TPositive;
+		 									C1.setPositiveAttributes(TPositive);
+		 								
+		 							
+		 							}
+		 							
+		 							else
+		 							{
+		 								
+		 								NEG = TPositive;
+		 								C1.setNegativeAttributes(NEG);
+		 								
+		 								String setMethodName = "set"+TPositive;
+
+		 							
+		 							
+		 							if(m3.getReturnType().equals(Integer.TYPE))
+		 							{
+		 								Method m5 = C1.getClass().getMethod(setMethodName,Integer.TYPE);
+		 								m5.invoke(C1, SecondMasterdataInteger); 
+		 								PosAttributes = PosAttributes+","+TPositive;
+		 								C1.setPositiveAttributes(TPositive);
+		 								
+		 							}
+		 							
+		 							else
+		 							{
+		 								Method m5 = C1.getClass().getMethod(setMethodName,String.class);
+		 								m5.invoke(C1, SecondMasterdataString);
+		 								PosAttributes = PosAttributes+","+TPositive;
+		 								
+		 								
+		 							}
+		 							
+							 		
+							 		
+							 		
+							 		
+							 	}  // else part when data is to be corrected
+							 	
+							 	
+							} 	//end of 2nd Part if
+									 	
+							 			
+					 			
+					 			
+		 			
+			 		} // end of try
+			 		
+			 		catch(Exception e)
+			 		{
+			 		
+			 			System.out.println(" "+e.getMessage());
+			 			
+			 		}
+
+			 		
+			 	} // end of if
+			 	else
+			 	{
+			 		
+			 		break;
+			 		
+			 	}
+			 	
+			 	
+		 } //end of while
+		 
+		 try
+		 {
+		 reflect(C1);
+		 }
+		 catch(Exception e)
+		 {
+			 
+			 System.out.println(" "+e.getMessage());
+		 }
+		 C1 = getOneCustomer(Customers); 
+		 i2 = 0;
+		 i3 = 0;
+		 
+	}
+		 
+		 
+		 
+		 System.out.println("Data is Cleaned!!");
+		 
+		
+		  
+	 }
+	 
+	 public Customer getOneCustomer(List<Customer>Customers)	 
+	 {
+		 
+		 List<Customer> Customers1 = new ArrayList<Customer>();
+		 
+		 Customers1 = Customers;
+		 
+		// CustomerIteration = Customers1.size();
+		 
+		 Customer C1 = new Customer();
+		 
+		 while(i1<CustomerIteration)
+		 {
+			 
+			 C1=Customers1.get(i1);
+
+			 i1++;
+			 return C1;
+			 
+		 }
+
+		 return null;
+		 
+		 
+	 }
+	 
+	 
+	 public Rules getOneRule(List<Rules>Rule)
+	 {
+		 
+		 List<Rules> Rules1 = new ArrayList<Rules>();
+		 
+		 Rules1 = Rule;
+		 
+		// RulesIteration = Rules1.size();
+		 
+		 Rules R1 = new Rules();
+		 
+		 while(i2<RulesIteration)
+		 {
+			 
+			 R1=Rules1.get(i2);
+			 
+			 i2++;
+			 return R1;
+			 
+		 }
+		 
+		 
+		 return null;
+	 }
+	 
+	 public cleanCustomer getOnecleanCustomer(List<cleanCustomer>cleanCustomers, Customer C)
+	 {
+		 
+		 List<cleanCustomer> cleanCustomers1 = new ArrayList<cleanCustomer>();
+		 
+		 cleanCustomers1= cleanCustomers;
+		 
+		 
+		// CleanCustomerIteration = cleanCustomers1.size();
+		 
+		 cleanCustomer cC1 = new cleanCustomer();
+		 
+		 Customer C1 =  new Customer();
+		 
+		 C1 = C;
+		 
+		 String TupleFirstName,MasterFirstName,TupleLastName,MasterLastName;
+		 
+		 while(i3<CleanCustomerIteration)
+		 {
+			 
+			 cC1=cleanCustomers1.get(i3);
+			 
+			 TupleFirstName = C1.getFN();
+			 MasterFirstName = cC1.getMFN();
+			 TupleLastName = C1.getLN();
+			 MasterLastName = cC1.getMLN();
+			 
+			 if(TupleFirstName.equals(MasterFirstName) && TupleLastName.equals(MasterLastName))
+			 {
+			 
+				 return cC1;
+			 }
+			 
+			 else
+			 {
+				 
+				 i3++;
+				 continue;
+				 
+			 }
+			 
+		 }
+		 
+		 
+		 return null;
+		 
+		 
+	 }
+	 
+	 public void reflect(Customer C) throws Exception
+	 {
+		 
+		 Customer C1 = new Customer();
+		 C1 = C;
+		 Connection conn;
+		 Statement stmt;
+		 
+			//STEP 2: Register JDBC driver
+	         Class.forName("com.mysql.jdbc.Driver");
+
+	         //STEP 3: Open a connection
+	         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/TEST1","root","");
+
+	         //STEP 4: Execute a query
+	         stmt = conn.createStatement();
+	         
+	         String sqlquery = "Delete from TEST2 where TID = '"+C1.getTID()+"' ";
+	         
+	         stmt.executeUpdate(sqlquery);
+	         
+	         String sqlquery1 = "Insert into TEST2 values('"+C1.getTID()+"','"+C1.getFN()+"','"+C1.getLN()+"','"+C1.getGD()+"','"+C1.getAC()+"','"+C1.getPH()+"','"+C1.getCT()+"','"+C1.getST()+"','"+C1.getZIP()+"','"+C1.getMS()+"','"+C1.getCH()+"','"+C1.getSAL()+"','"+C1.getTR()+"','"+C1.getSTX()+"','"+C1.getMTX()+"','"+C1.getCTX()+"')";         
+	         stmt.executeUpdate(sqlquery1);
+		 
+		 
+		 
+		 
+		 
+	 }
+	 
+	 
+ }
+
+
+
+public class DC 
+{
+	
+	
+	
+		public static void main(String[] args) throws Exception
+		{
+	        
+	        String sqlquery1 = "select t.*from test2 t where exists (select 1 from test2 t2 where t.tid <> t2.tid and t.st = t2.st and t.sal > t2.sal and t.tr < t2.tr) or exists (select 1 from test2 t2 where t.tid <> t2.tid and t.st = t2.st and t.sal < t2.sal and t.tr > t2.tr);";
+	        String sqlquery2 = "select * from RULES1";
+	        String sqlquery3 = "select t1.* from test2 t1 where exists (select 1 from test2 t2 where t1.tid <> t2.tid and t1.CH <> t2.CH and t1.CTX > t2.STX and t1.STX < t2.CTX) or exists (select 1 from test2 t2 where t1.tid <> t2.tid and t1.CH <> t2.CH and t1.CTX > t2.STX and t1.STX < t2.CTX);";
+	        String sqlquery4 = "select * from MASTERTABLE";
+	        String sqlquery5 = "select * from TEST2 where ST = 'FA' and ZIP<30397";
+	        String sqlquery6 = "select * from TEST2 where CT = 'Denver' and ST <> 'CO';";
+	        
+	        
+	        String FixAttribute1 = "FN,SAL,TR,ST";
+	        String FixAttribute2 = "FN,CH,STX,CTX";
+	        String FixAttribute3 = "FN,ST,ZIP";
+	        String FixAttribute4 = "FN,CT,ST";
+	        
+	            computeData CD1 = new computeData(sqlquery1);
+	            computeRule CR1 = new computeRule(sqlquery2);
+	            computeData CD2 = new computeData(sqlquery3);
+	            masterRule MR1 = new masterRule(sqlquery4);
+	            computeData CD3 = new computeData(sqlquery5);
+	            computeData CD4 = new computeData(sqlquery6);
+	            
+	            
+	            
+	         //   Customer C1 = new Customer();
+	         //   cleanCustomer CC1 =  new cleanCustomer();
+	         //   Rules R1 = new Rules();
+	            
+	            List<Customer> Customer1 = new ArrayList<Customer>();
+	            List<cleanCustomer> CCustomer1 = new ArrayList<cleanCustomer>();
+	            List<Rules> Rules1 = new ArrayList<Rules>();
+	            
+	            
+	            
+	            List<Customer> Customer2 = new ArrayList<Customer>();
+	            
+	            List<Customer> Customer3 = new ArrayList<Customer>();
+	            
+	            List<Customer> Customer4 = new ArrayList<Customer>();
+	            
+	            Rules1=CR1.fetchrule();     
+	           	CCustomer1=MR1.fetchrule();
+
+	            Customer1=CD1.fetchData();
+	            CD1.printData();
+	            
+	           
+
+	            if(!Customer1.isEmpty())
+	            {
+	            clean c1 = new clean(Customer1,Rules1,CCustomer1,FixAttribute1);
+	            c1.cleanData();
+	            System.out.println("-------------- Cleaned Data -------------");
+	            CD1.printData();
+	            }
+	            else
+	            {
+	            	System.out.println(" No violation for the Part 1 ");
+	            	
+	            }
+	            
+	            System.out.println();
+	            
+	            Customer2 = CD2.fetchData();
+	            CD2.printData();
+	            
+	            if(!Customer2.isEmpty())
+	            {
+	            
+	            clean c2 = new clean(Customer2,Rules1,CCustomer1,FixAttribute2);
+	            c2.cleanData();
+	            System.out.println("-------------- Cleaned Data -------------");
+	            CD2.printData();
+	            
+	            }
+	            else
+	            {
+	            	
+	            	System.out.println(" No violation for the Part 2 ");
+	            	
+	            	
+	            }
+	            
+	            System.out.println();
+	            
+	            
+	            System.out.println();
+	            
+	            Customer3 = CD3.fetchData();
+	            CD3.printData();
+
+	            
+	            if(!Customer3.isEmpty())
+	            {
+	            
+	            clean c3 = new clean(Customer3,Rules1,CCustomer1,FixAttribute3);
+	            c3.cleanData();
+	            System.out.println("-------------- Cleaned Data -------------");
+	            CD3.printData(); 
+	            
+	            }
+	            
+	            else
+	            {
+	            	
+	            	System.out.println(" No violation for the Part 3 ");
+	            	
+	            }
+	            
+	           
+	            System.out.println();
+	            
+	            Customer4 = CD4.fetchData();
+	            CD4.printData();
+
+	            if(!Customer4.isEmpty())
+	            {
+	            
+	            	clean c4 = new clean(Customer4,Rules1,CCustomer1,FixAttribute4);
+		            c4.cleanData();
+		            System.out.println("-------------- Cleaned Data -------------");
+		            CD4.printData();
+		            
+	            }
+	            
+	            else
+	            {
+	            	
+	            	System.out.println(" No violation for the Part 4 ");
+	            	
+	            }
+
+		}
+}
+

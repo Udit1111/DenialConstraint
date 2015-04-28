@@ -1,0 +1,13 @@
+// Queries used for searching the violated data using exist and inner join 
+
+select * from TEST2 t1 join TEST2 t2 on t1.TID <> t2.TID and t1.ST = t2.ST and t1.SAL > t2.SAL and t1.TR < t2.TR;
+
+select t.*from test2 t where exists (select 1 from test2 t2 where t.tid <> t2.tid and t.st = t2.st and t.sal > t2.sal and t.tr < t2.tr) or exists (select 1 from test2 t2 where t.tid <> t2.tid and t.st = t2.st and t.sal < t2.sal and t.tr > t2.tr);
+
+select * from TEST2 where CT = 'Denver' and ST <> 'CO';
+
+select * from Test2 t1 join TEST2 t2 on t1.TID <> t2.TID and t1.CH <> t2.CH and t1.CTX > t2.STX and t1.STX < t2.CTX;
+
+select t1.* from test2 t1 where exists (select 1 from test2 t2 where t1.tid <> t2.tid and t1.CH <> t2.CH and t1.CTX > t2.STX and t1.STX < t2.CTX) or exists (select 1 from test2 t2 where t1.tid <> t2.tid and t1.CH <> t2.CH and t1.CTX > t2.STX and t1.STX < t2.CTX);
+
+select * from TEST2 where ST='FA' and ZIP<30397;
